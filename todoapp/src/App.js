@@ -1,9 +1,9 @@
 import React from 'react'
-
+import TodoApp from './Components/TodoApp.js'
 const App = () => {
   return (
     <div>
-      Hello
+      <TodoApp />
     </div>
   )
 }

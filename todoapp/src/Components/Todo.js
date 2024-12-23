@@ -1,9 +1,16 @@
+//SINGLE TODO
 import React from 'react'
-
-const Todo = () => {
+import { FaTrashAlt } from "react-icons/fa";
+const Todo = (props) => {
+  function deleteTodoHandler(id){
+    props.deleteTodo(id)
+  }
   return (
     <div>
-      
+      <li>
+        <p>Index: {props.index} --&gt; ID: {props.id} -- Task: {props.todo} <span onClick={()=>deleteTodoHandler(props.id)}><FaTrashAlt /></span></p>
+        
+      </li>
     </div>
   )
 }
