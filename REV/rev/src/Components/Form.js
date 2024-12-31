@@ -11,7 +11,8 @@ const Form = (props) => {
         const newTodo = {
             // id: props.todos.length,
             id: uuid(),
-            todos:input
+            todos:input,
+            checked: false
         }
         props.addTodo(newTodo)
         console.log(input)

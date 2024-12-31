@@ -6,19 +6,23 @@ const TodoApp = () => {
     let arrayDummy = [
         {
             id:uuid(),
-            todos: "Code karo"
+            todos: "Code karo",
+            checked: false
         },
         {
             id:uuid(),
-            todos: "Meet with boss"
+            todos: "Meet with boss",
+            checked: false
         },
         {
             id:uuid(),
-            todos: "Meeting with team"
+            todos: "Meeting with team",
+            checked: false
         },
         {
             id:uuid(),
-            todos: "Work on project"
+            todos: "Work on project",
+            checked: false
         }
     ]
     let [todos, setTodods] = useState(arrayDummy)
@@ -28,11 +32,17 @@ const TodoApp = () => {
     const deleteTodo = (id) => {
         setTodods(todos.filter(todo => todo.id!== id))
     }
+    const checkTodo = (id)=>{
+        // setTodods(todos.map(todo => todo.id === id? {...todo, checked:!todo.checked}: todo))
+        setTodods((prevState)=>{
+          return prevState.map(todo => todo.id === id? {...todo, checked:!todo.checked}: todo)
+        })
+    }
   return (
     <div>
       <Form addTodo={addTodo} todos={todos}/>
       {/* <TodoList todos={arrayDummy}/> */}
-      <TodoList todos={todos} deleteTodo={deleteTodo}/>
+      <TodoList todos={todos} deleteTodo={deleteTodo} checkTodo={checkTodo}/>
     </div>
   )
 }
