@@ -23,7 +23,9 @@ let dummyQuotes = [
         text: 'If you want to achieve greatness, don\'t stop questioning!!'
     }
 ]
-function seedDB(){
-
+async function seedDB(){
+    await Quotes.deleteMany({}); 
+    await Quotes.insertMany(dummyQuotes);
+    console.log('DB seeded')
 }
 module.exports = seedDB;
