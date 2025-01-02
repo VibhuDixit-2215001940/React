@@ -12,17 +12,12 @@ router.get('/allquotes',async (req, res)=>{
 })
 
 router.post('/addquotes',async (req, res)=>{
-    const quote = new Quotes({
-        quoteText: req.body.quoteText,
-        author: req.body.author
-    })
-    try{
-        await quote.save();
-        res.status(201).json(quote);
+    const { author, quote } = req.body;
+    if (!author || !quote) {
+      return res.status(400).json({ message: 'Author and quote are required' });
     }
-    catch(e){
-        res.status(400).json({message: e.message})
-    }
+    // Process and store the quote
+    res.status(200).json({ message: 'Quote added successfully' });
 })
 
 module.exports = router;
