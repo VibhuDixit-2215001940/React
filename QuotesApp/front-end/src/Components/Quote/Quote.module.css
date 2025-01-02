@@ -1,0 +1,65 @@
+/* Quote.module.css
+
+/* Container styles */
+li {
+    list-style: none;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin: 16px 0;
+    padding: 16px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #333;
+  }
+  
+  li:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Inner container styles */
+  span {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  
+  /* Quote text styles */
+  p {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0;
+    font-style: italic;
+  }
+  
+  /* Author name styles */
+  h3 {
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+    align-self: flex-end;
+  }
+  
+  /* Button styles */
+  button {
+    margin-top: 12px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:active {
+    background-color: #00408d;
+  }
